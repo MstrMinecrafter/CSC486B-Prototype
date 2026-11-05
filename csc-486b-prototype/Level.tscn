@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dupkfr8q1ej1y"]
+
+[ext_resource type="Script" uid="uid://bc7uvf36u4nac" path="res://level.gd" id="1_bexhn"]
+[ext_resource type="Texture2D" uid="uid://d4h1pa8wv1lel" path="res://icon.svg" id="2_q4iis"]
+[ext_resource type="PackedScene" uid="uid://iw0usquwya8u" path="res://wall.tscn" id="3_m3clv"]
+[ext_resource type="PackedScene" uid="uid://rrgylns62haf" path="res://Player.tscn" id="4_mxnmf"]
+[ext_resource type="PackedScene" uid="uid://d18ljrvjjr1gc" path="res://obstacle.tscn" id="5_4eo0i"]
+
+[node name="Level" type="Node2D" unique_id=1407382396]
+script = ExtResource("1_bexhn")
+bg_parallax = 3.0
+
+[node name="Background" type="Node" parent="." unique_id=228629515]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=2024734139]
+position = Vector2(3.5000305, 1)
+scale = Vector2(13.210937, 7.7656245)
+texture = ExtResource("2_q4iis")
+
+[node name="Midground" type="Node" parent="." unique_id=1962280685]
+
+[node name="Wall" parent="Midground" unique_id=828491979 instance=ExtResource("3_m3clv")]
+position = Vector2(-319, 127)
+scale = Vector2(5.7857203, 5.1468544)
+
+[node name="Foreground" type="Node" parent="." unique_id=1828279886]
+
+[node name="Player" parent="Foreground" unique_id=2083418740 instance=ExtResource("4_mxnmf")]
+position = Vector2(135, 60)
+
+[node name="Obstacle" parent="Foreground" unique_id=1817276322 instance=ExtResource("5_4eo0i")]
+position = Vector2(148, 236)
+
+[node name="Obstacle2" parent="Foreground" unique_id=921351730 instance=ExtResource("5_4eo0i")]
+position = Vector2(-275, 179)
