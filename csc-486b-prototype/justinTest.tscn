@@ -1,3 +1,21 @@
 [gd_scene format=3 uid="uid://o6i2kmghts7a"]
 
+[ext_resource type="Shader" uid="uid://b3iqdd5v45gky" path="res://crt.gdshader" id="1_8egyd"]
+[ext_resource type="Texture2D" uid="uid://d25yuqss52kvp" path="res://00_Assets/shrimp crawfish lobster whatever.jpg" id="2_8apwi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8egyd"]
+shader = ExtResource("1_8egyd")
+
 [node name="JustinTest" type="Node2D" unique_id=1183318052]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=929879918]
+position = Vector2(575.75, 321.75003)
+scale = Vector2(1.9161236, 1.6662501)
+texture = ExtResource("2_8apwi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2038444487]
+material = SubResource("ShaderMaterial_8egyd")
+offset_left = -59.0
+offset_top = -63.0
+offset_right = 1220.0
+offset_bottom = 677.0
