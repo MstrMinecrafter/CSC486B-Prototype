@@ -5,9 +5,15 @@ extends Node2D
 
 @export var bg_parallax: float
 
+@export var levels: Array[PackedScene]
+var level_index = 0
+var cur_level: Level = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	cur_level = levels[level_index].instantiate()
+	add_child(cur_level)
+	pass
 
 
 func _physics_process(delta: float) -> void:
