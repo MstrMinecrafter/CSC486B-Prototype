@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://rrgylns62haf"]
+[gd_scene format=3 uid="uid://rrgylns62haf"]
 
 [ext_resource type="Script" uid="uid://j8tr4q2nxhhh" path="res://player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://d4h1pa8wv1lel" path="res://icon.svg" id="1_xhfnw"]
@@ -7,20 +7,20 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1672124461]
 script = ExtResource("1_kpjcp")
 SPEED = 300.0
 JUMP_VELOCITY = 400.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=267616744]
 shape = SubResource("RectangleShape2D_kne1u")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1810514534]
 position = Vector2(-1.6689299e-06, 1.1920927e-06)
 scale = Vector2(0.15624999, 0.15624999)
 texture = ExtResource("1_xhfnw")
 
-[node name="WallBlendArea" type="Area2D" parent="."]
+[node name="WallBlendArea" type="Area2D" parent="." unique_id=271542887]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBlendArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBlendArea" unique_id=2030675391]
 shape = SubResource("RectangleShape2D_kpjcp")

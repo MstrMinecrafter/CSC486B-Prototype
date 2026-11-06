@@ -1,13 +1,28 @@
 extends Node2D
 class_name Level
 
-#@onready var entrance = $Entrance
-#@onready var exit = $Exit
+var player: Player
+var bg_sprite: Sprite2D
+var entrance: Marker2D
+var exit: Area2D
+var root: Root
 
-@onready var player = $Foreground/Player
-@onready var bg_sprite = $Background/Sprite2D
-@export var bg_parallax: float
+func init(root) -> void:
+	player = $Foreground/Player
+	bg_sprite = $Background/Sprite2D
+	entrance = $Entrance
+	exit = $Exit
+	self.root = root
+	player.position = entrance.position
 
-func update(cam, delta):
-	bg_sprite.position = cam.position / bg_parallax
+func update(delta):
+	bg_sprite.position = root.cam.position / root.bg_parallax
 	player.update(delta)
+	check_for_exit()
+
+func check_for_exit():
+	var overlapping_areas = exit.get_overlapping_areas()
+	for overlapping_area in overlapping_areas:
+		if overlapping_area.get_parent() is Player:
+			root.inc_level()
+			break

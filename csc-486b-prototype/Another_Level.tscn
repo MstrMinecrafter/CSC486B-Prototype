@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://v3yhlmjfwwmq"]
+
+[ext_resource type="Script" uid="uid://bc7uvf36u4nac" path="res://level.gd" id="1_q23sj"]
+[ext_resource type="Texture2D" uid="uid://d4h1pa8wv1lel" path="res://icon.svg" id="2_jikgx"]
+[ext_resource type="PackedScene" uid="uid://iw0usquwya8u" path="res://wall.tscn" id="3_ths3v"]
+[ext_resource type="PackedScene" uid="uid://rrgylns62haf" path="res://Player.tscn" id="4_w0ma8"]
+[ext_resource type="PackedScene" uid="uid://d18ljrvjjr1gc" path="res://obstacle.tscn" id="5_x1lmt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65sm4"]
+size = Vector2(29, 30)
+
+[node name="Level" type="Node2D" unique_id=1407382396]
+script = ExtResource("1_q23sj")
+
+[node name="Background" type="Node" parent="." unique_id=228629515]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=2024734139]
+position = Vector2(3.5000305, 1)
+scale = Vector2(13.210937, 7.7656245)
+texture = ExtResource("2_jikgx")
+
+[node name="Midground" type="Node" parent="." unique_id=1962280685]
+
+[node name="Wall" parent="Midground" unique_id=828491979 instance=ExtResource("3_ths3v")]
+position = Vector2(-319, 127)
+scale = Vector2(5.7857203, 5.1468544)
+
+[node name="Foreground" type="Node" parent="." unique_id=1828279886]
+
+[node name="Player" parent="Foreground" unique_id=2083418740 instance=ExtResource("4_w0ma8")]
+position = Vector2(135, 60)
+
+[node name="Obstacle" parent="Foreground" unique_id=1817276322 instance=ExtResource("5_x1lmt")]
+position = Vector2(297, 279)
+
+[node name="Obstacle3" parent="Foreground" unique_id=1957534414 instance=ExtResource("5_x1lmt")]
+position = Vector2(487, -74)
+
+[node name="Obstacle2" parent="Foreground" unique_id=921351730 instance=ExtResource("5_x1lmt")]
+position = Vector2(-275, 179)
+
+[node name="Entrance" type="Marker2D" parent="." unique_id=2121061980]
+position = Vector2(171, 74)
+
+[node name="Exit" type="Area2D" parent="." unique_id=1794265350]
+position = Vector2(-179, 144)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1789815733]
+position = Vector2(4.5, 5)
+shape = SubResource("RectangleShape2D_65sm4")

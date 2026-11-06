@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://rrgylns62haf" path="res://Player.tscn" id="4_mxnmf"]
 [ext_resource type="PackedScene" uid="uid://d18ljrvjjr1gc" path="res://obstacle.tscn" id="5_4eo0i"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65sm4"]
+size = Vector2(29, 30)
+
 [node name="Level" type="Node2D" unique_id=1407382396]
 script = ExtResource("1_bexhn")
-bg_parallax = 3.0
 
 [node name="Background" type="Node" parent="." unique_id=228629515]
 
@@ -33,3 +35,13 @@ position = Vector2(148, 236)
 
 [node name="Obstacle2" parent="Foreground" unique_id=921351730 instance=ExtResource("5_4eo0i")]
 position = Vector2(-275, 179)
+
+[node name="Entrance" type="Marker2D" parent="." unique_id=2121061980]
+position = Vector2(171, 74)
+
+[node name="Exit" type="Area2D" parent="." unique_id=1794265350]
+position = Vector2(-179, 144)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1789815733]
+position = Vector2(4.5, 5)
+shape = SubResource("RectangleShape2D_65sm4")
