@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://iw0usquwya8u"]
+
+[ext_resource type="Script" uid="uid://dckmx48eneh06" path="res://03_Environment/wall.gd" id="1_xxgf6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxgf6"]
+
+[node name="Wall" type="Node2D" unique_id=1127716495]
+script = ExtResource("1_xxgf6")
+colour = "red"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2143671788]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=581240117]
+shape = SubResource("RectangleShape2D_xxgf6")
