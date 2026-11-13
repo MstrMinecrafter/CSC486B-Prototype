@@ -16,8 +16,9 @@ func _ready() -> void:
 func detect_player():
 	var overlapping_areas = detection_area.get_overlapping_areas()
 	for overlapping_area in overlapping_areas:
-		if overlapping_area.get_parent() is Player:
-			target = overlapping_area.get_parent()
+		var overlap_parent = overlapping_area.get_parent()
+		if overlap_parent is Player and not overlap_parent.blending_in:
+			target = overlap_parent
 			on_path = false
 			return
 	target = null

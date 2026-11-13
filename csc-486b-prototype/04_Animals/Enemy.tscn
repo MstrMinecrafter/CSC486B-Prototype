@@ -17,6 +17,7 @@ size = Vector2(773, 482)
 [node name="Enemy" type="Node2D" unique_id=855378465]
 script = ExtResource("1_le3yn")
 speed = 100.0
+flying = true
 
 [node name="Patrol" type="Path2D" parent="." unique_id=863664364]
 curve = SubResource("Curve2D_ph0r0")
