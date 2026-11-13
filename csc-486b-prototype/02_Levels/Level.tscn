@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://drbv26fbcjkxy" path="res://04_Animals/kitten.tscn" id="6_33871"]
 [ext_resource type="PackedScene" uid="uid://dngyig0abd1sr" path="res://04_Animals/Enemy.tscn" id="7_c5kom"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65sm4"]
+size = Vector2(29, 30)
+
 [sub_resource type="Curve2D" id="Curve2D_c5kom"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 352.6038, 135.24527, 0, 0, 0, 0, -202.86792, 152.15094, 0, 0, 0, 0, 57.96225, -91.773605)
 }
 point_count = 3
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_65sm4"]
-size = Vector2(29, 30)
 
 [node name="Level" type="Node2D" unique_id=1407382396]
 script = ExtResource("1_fda4h")
@@ -31,14 +31,21 @@ texture = ExtResource("2_q4iis")
 [node name="Midground" type="Node" parent="." unique_id=1962280685]
 
 [node name="Wall" parent="Midground" unique_id=828491979 instance=ExtResource("3_m3clv")]
-position = Vector2(-319, 127)
+position = Vector2(-304, 147)
 scale = Vector2(5.7857203, 5.1468544)
 
 [node name="ColourChanger" parent="Midground" unique_id=648904756 instance=ExtResource("4_p25ue")]
 position = Vector2(269, 206)
-colour = "red"
+colour = Color(1, 0, 0, 1)
 
 [node name="Foreground" type="Node" parent="." unique_id=1828279886]
+
+[node name="Exit" type="Area2D" parent="Foreground" unique_id=1794265350]
+position = Vector2(-407.73, 144)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Exit" unique_id=1789815733]
+position = Vector2(4.5, 5)
+shape = SubResource("RectangleShape2D_65sm4")
 
 [node name="Player" parent="Foreground" unique_id=2083418740 instance=ExtResource("4_mxnmf")]
 position = Vector2(135, 60)
@@ -54,14 +61,7 @@ position = Vector2(209, 120)
 curve = SubResource("Curve2D_c5kom")
 
 [node name="Enemy" parent="Foreground" unique_id=855378465 instance=ExtResource("7_c5kom")]
-position = Vector2(-981, -154)
+position = Vector2(-992, -163)
 
 [node name="Entrance" type="Marker2D" parent="." unique_id=2121061980]
 position = Vector2(171, 74)
-
-[node name="Exit" type="Area2D" parent="." unique_id=1794265350]
-position = Vector2(-179, 144)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1789815733]
-position = Vector2(4.5, 5)
-shape = SubResource("RectangleShape2D_65sm4")

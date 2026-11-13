@@ -39,12 +39,12 @@ position = Vector2(487, -74)
 [node name="Obstacle2" parent="Foreground" unique_id=921351730 instance=ExtResource("5_x1lmt")]
 position = Vector2(-275, 179)
 
-[node name="Entrance" type="Marker2D" parent="." unique_id=2121061980]
-position = Vector2(171, 74)
-
-[node name="Exit" type="Area2D" parent="." unique_id=1794265350]
+[node name="Exit" type="Area2D" parent="Foreground" unique_id=1794265350]
 position = Vector2(-179, 144)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1789815733]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Exit" unique_id=1789815733]
 position = Vector2(4.5, 5)
 shape = SubResource("RectangleShape2D_65sm4")
+
+[node name="Entrance" type="Marker2D" parent="." unique_id=2121061980]
+position = Vector2(171, 74)

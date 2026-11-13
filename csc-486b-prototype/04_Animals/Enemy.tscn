@@ -5,9 +5,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_ph0r0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 140, 42, 0, 0, 0, 0, 101, 239, 0, 0, 0, 0, 417, 172)
+"points": PackedVector2Array(0, 0, 0, 0, 140, 42, 0, 0, 0, 0, 101, 239, 0, 0, 0, 0, 417, 172, 0, 0, 0, 0, 140, 42)
 }
-point_count = 3
+point_count = 4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_65sm4"]
 

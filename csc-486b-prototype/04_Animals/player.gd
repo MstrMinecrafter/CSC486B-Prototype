@@ -6,7 +6,7 @@ class_name Player
 
 @onready var wall_blend_area = $WallBlendArea
 
-var colour = "black"
+var colour = Color.BLACK
 var blending_in = false
 
 func update(delta: float):

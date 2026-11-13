@@ -11,7 +11,7 @@ func init(root) -> void:
 	player = $Foreground/Player
 	bg_sprite = $Background/Sprite2D
 	entrance = $Entrance
-	exit = $Exit
+	exit = $Foreground/Exit
 	self.root = root
 	player.position = entrance.position
 
