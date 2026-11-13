@@ -1,0 +1,18 @@
+How to set up a level:
+	- Make a duplicate of one of the levels in the levels folder and add it to the "levels" array in root.
+	Levels will just scroll from the start-end of the array, so once you make some actual levels feel free to
+	get rid of my test ones.
+	- Change the sprite in the background to whatever you like. It is currently still expecting a node called "Sprite2D"
+	so even if you change the type make sure it it is still called "Sprite2D" for now
+	- Place and scale the exit however you like
+	- Drag the entrance to where you want the player to start
+	- For the kitten, remove the default curve2d and make your own that goes from the cat's starting position
+	(probably near the player's start pos) to the exit
+	- For the enemies, you will have to make copies of the base enemy to change things. Do the same for the curve2d,
+	except make sure that their path ends where it began. This will be it's patrol path. Then, scale and move the
+	detection area to your liking. The player will only be chased within this area.
+	- Set up obstacles (floors wall ceilings etc) in the foreground. At the time of writing this, it is just using the
+	simple "obstacle" scene which is just a rectangular collider. Justin will replace this with a tile system however.
+	- Put blending things (walls and colourchangers) in the midground. Set their colour by clicking on them and changing
+	the "colour" property at the top of the inspector, NOT by changing the colour of their sprite/colorrect. Walls will
+	not appear the correct colour until the game starts. Note that the colours must be EXACTLY equal for blending to occur.
