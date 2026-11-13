@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dngyig0abd1sr"]
+
+[ext_resource type="Script" uid="uid://denccape5ywg2" path="res://04_Animals/enemy.gd" id="1_le3yn"]
+[ext_resource type="Texture2D" uid="uid://d4h1pa8wv1lel" path="res://icon.svg" id="2_3ul6j"]
+
+[sub_resource type="Curve2D" id="Curve2D_ph0r0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 140, 42, 0, 0, 0, 0, 101, 239, 0, 0, 0, 0, 417, 172)
+}
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_65sm4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le3yn"]
+size = Vector2(773, 482)
+
+[node name="Enemy" type="Node2D" unique_id=855378465]
+script = ExtResource("1_le3yn")
+speed = 100.0
+
+[node name="Patrol" type="Path2D" parent="." unique_id=863664364]
+curve = SubResource("Curve2D_ph0r0")
+
+[node name="PatrolFollow" type="PathFollow2D" parent="Patrol" unique_id=1992075127]
+position = Vector2(140, 42)
+rotation = 1.7662388
+
+[node name="Body" type="Area2D" parent="." unique_id=1162475639]
+
+[node name="Sprite2D" type="Sprite2D" parent="Body" unique_id=1779768081]
+texture = ExtResource("2_3ul6j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body" unique_id=1143427331]
+scale = Vector2(6.4, 6.4)
+shape = SubResource("CircleShape2D_65sm4")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1680971754]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=381943273]
+position = Vector2(376.5, 231)
+shape = SubResource("RectangleShape2D_le3yn")

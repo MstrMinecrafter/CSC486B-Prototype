@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://rrgylns62haf" path="res://04_Animals/Player.tscn" id="4_mxnmf"]
 [ext_resource type="PackedScene" uid="uid://d18ljrvjjr1gc" path="res://03_Environment/obstacle.tscn" id="5_4eo0i"]
 [ext_resource type="PackedScene" uid="uid://drbv26fbcjkxy" path="res://04_Animals/kitten.tscn" id="6_33871"]
+[ext_resource type="PackedScene" uid="uid://dngyig0abd1sr" path="res://04_Animals/Enemy.tscn" id="7_c5kom"]
 
 [sub_resource type="Curve2D" id="Curve2D_c5kom"]
 _data = {
@@ -46,6 +47,9 @@ position = Vector2(-275, 179)
 [node name="Kitten" parent="Foreground" unique_id=243337083 instance=ExtResource("6_33871")]
 position = Vector2(209, 120)
 curve = SubResource("Curve2D_c5kom")
+
+[node name="Enemy" parent="Foreground" unique_id=855378465 instance=ExtResource("7_c5kom")]
+position = Vector2(-981, -154)
 
 [node name="Entrance" type="Marker2D" parent="." unique_id=2121061980]
 position = Vector2(171, 74)

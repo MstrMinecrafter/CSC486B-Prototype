@@ -10,13 +10,16 @@ var colour = "black"
 
 func update(delta: float):
 	move(delta)
-	detect_walls()
+	detect_overlaps()
 
-func detect_walls():
+func detect_overlaps():
 	var overlapping_areas = wall_blend_area.get_overlapping_areas()
 	for overlapping_area in overlapping_areas:
 		if overlapping_area.get_parent() is Wall and overlapping_area.get_parent().colour == colour:
 			print("hello")
+		if overlapping_area.name == "Body" and overlapping_area.get_parent() is Enemy:
+			var root = get_tree().root.get_node("Root") as Root #kind of a hacky way of handling death but whatever
+			root.change_level(root.level_index)
 
 func move(delta: float) -> void:
 	# Add the gravity.
