@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://drbv26fbcjkxy"]
+
+[ext_resource type="Texture2D" uid="uid://d4h1pa8wv1lel" path="res://icon.svg" id="1_4pbc8"]
+[ext_resource type="Script" uid="uid://dmfmay8nqq0dq" path="res://04_Animals/kitten.gd" id="2_13vmp"]
+
+[sub_resource type="Curve2D" id="Curve2D_13vmp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 166.64151, -45.886795, 0, 0, 0, 0, -246.33963, 0, 0, 0, 0, 0, -9.6603775, -185.96227)
+}
+point_count = 3
+
+[node name="Kitten" type="Path2D" unique_id=243337083]
+scale = Vector2(0.4140625, 0.4140625)
+curve = SubResource("Curve2D_13vmp")
+script = ExtResource("2_13vmp")
+speed = 200.0
+
+[node name="PathFollow2d" type="PathFollow2D" parent="." unique_id=1097182843]
+position = Vector2(166.64151, -45.886795)
+rotates = false
+loop = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2d" unique_id=79664581]
+texture = ExtResource("1_4pbc8")
