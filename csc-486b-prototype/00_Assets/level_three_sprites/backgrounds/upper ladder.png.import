@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvhi0ri8s6lbs"
-path="res://.godot/imported/water_bowl.png-19b6e2ea92e7f710dc4968c79462377b.ctex"
+uid="uid://b7c5e1mopsoyc"
+path="res://.godot/imported/upper ladder.png-38791fac719055f3048c746555eeae22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://00_Assets/Objects/water_bowl.png"
-dest_files=["res://.godot/imported/water_bowl.png-19b6e2ea92e7f710dc4968c79462377b.ctex"]
+source_file="res://00_Assets/level_three_sprites/backgrounds/upper ladder.png"
+dest_files=["res://.godot/imported/upper ladder.png-38791fac719055f3048c746555eeae22.ctex"]
 
 [params]
 

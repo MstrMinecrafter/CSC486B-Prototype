@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw686bs05w5yh"
-path="res://.godot/imported/window.png-43c2fed58fd9874c28e8060e875cc48c.ctex"
+uid="uid://bpk4q05hbdm2w"
+path="res://.godot/imported/sewer background.png-e974b83f69a3c38d3e21e66591240c9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://00_Assets/Objects/window.png"
-dest_files=["res://.godot/imported/window.png-43c2fed58fd9874c28e8060e875cc48c.ctex"]
+source_file="res://00_Assets/level_three_sprites/backgrounds/sewer background.png"
+dest_files=["res://.godot/imported/sewer background.png-e974b83f69a3c38d3e21e66591240c9e.ctex"]
 
 [params]
 
