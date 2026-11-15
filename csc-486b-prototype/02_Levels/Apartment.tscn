@@ -15,7 +15,7 @@ script = ExtResource("1_1217n")
 [node name="Background" type="Node" parent="." unique_id=228629515]
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=2024734139]
-position = Vector2(3.5000305, 1)
+position = Vector2(1128.9998, 297)
 scale = Vector2(13.210937, 7.7656245)
 texture = ExtResource("2_nrpv4")
 
@@ -47,4 +47,4 @@ position = Vector2(4.5, 5)
 shape = SubResource("RectangleShape2D_65sm4")
 
 [node name="Entrance" type="Marker2D" parent="." unique_id=2121061980]
-position = Vector2(171, 74)
+position = Vector2(348, 170)

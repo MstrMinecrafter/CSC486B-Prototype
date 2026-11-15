@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://c4oqq3hlqoa12"]
+
+[ext_resource type="Script" uid="uid://bc7uvf36u4nac" path="res://02_Levels/level.gd" id="1_brtc0"]
+[ext_resource type="Texture2D" uid="uid://bpk4q05hbdm2w" path="res://00_Assets/level_three_sprites/backgrounds/sewer background.png" id="2_brtc0"]
+[ext_resource type="PackedScene" uid="uid://iw0usquwya8u" path="res://03_Environment/wall.tscn" id="3_27mcu"]
+[ext_resource type="Texture2D" uid="uid://d1y0vxfrwpdgv" path="res://00_Assets/level_three_sprites/backgrounds/blend ins.png" id="3_huto2"]
+[ext_resource type="Texture2D" uid="uid://7hvoxfrq5qvc" path="res://00_Assets/level_three_sprites/backgrounds/pipe dripping spritesheet.png" id="4_mcs3h"]
+[ext_resource type="PackedScene" uid="uid://crdkquu7ql5gk" path="res://03_Environment/colour_changer.tscn" id="4_p5j1k"]
+[ext_resource type="Texture2D" uid="uid://bpgocdsheuqab" path="res://00_Assets/level_three_sprites/backgrounds/pipe pouring spritesheet.png" id="5_p2178"]
+[ext_resource type="PackedScene" uid="uid://rrgylns62haf" path="res://04_Animals/Player.tscn" id="5_w6fi8"]
+[ext_resource type="PackedScene" uid="uid://d18ljrvjjr1gc" path="res://03_Environment/obstacle.tscn" id="6_8icqo"]
+[ext_resource type="PackedScene" uid="uid://drbv26fbcjkxy" path="res://04_Animals/kitten.tscn" id="7_pggof"]
+[ext_resource type="PackedScene" uid="uid://dngyig0abd1sr" path="res://04_Animals/Enemy.tscn" id="8_huto2"]
+[ext_resource type="Texture2D" uid="uid://ddsihs1we55fq" path="res://00_Assets/level_three_sprites/backgrounds/sewer midground.png" id="8_p011d"]
+[ext_resource type="Texture2D" uid="uid://dot818qjnr4ni" path="res://00_Assets/level_three_sprites/backgrounds/tunnel ladder.png" id="13_as4kl"]
+[ext_resource type="Texture2D" uid="uid://b7c5e1mopsoyc" path="res://00_Assets/level_three_sprites/backgrounds/upper ladder.png" id="14_gd04y"]
+[ext_resource type="Texture2D" uid="uid://c8otwkn1veqqj" path="res://00_Assets/level_three_sprites/backgrounds/walkables.png" id="15_t32kp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65sm4"]
+size = Vector2(29, 30)
+
+[sub_resource type="Curve2D" id="Curve2D_c5kom"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1661.585, -156.98108, 0, 0, 0, 0, -1656.7546, -154.56604, 0, 0, 0, 0, -1668.8302, 739.01886, 0, 0, 0, 0, 1103.6982, 697.96234)
+}
+point_count = 4
+
+[node name="Level" type="Node2D" unique_id=1407382396]
+script = ExtResource("1_brtc0")
+
+[node name="Background" type="Node" parent="." unique_id=228629515]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=2024734139]
+position = Vector2(576, 324.00003)
+scale = Vector2(1.3714286, 1.1781819)
+texture = ExtResource("2_brtc0")
+
+[node name="BlendIns" type="Sprite2D" parent="Background" unique_id=2069235515]
+position = Vector2(576, 324)
+scale = Vector2(1.3714287, 1.1781818)
+texture = ExtResource("3_huto2")
+
+[node name="PipeDrippingSpritesheet" type="Sprite2D" parent="Background" unique_id=679177165]
+position = Vector2(576, 324.00003)
+scale = Vector2(1.3714287, 1.178182)
+texture = ExtResource("4_mcs3h")
+hframes = 7
+frame = 6
+
+[node name="PipePouringSpritesheet" type="Sprite2D" parent="Background" unique_id=1887385901]
+position = Vector2(576.00006, 324)
+scale = Vector2(1.3714285, 1.1781818)
+texture = ExtResource("5_p2178")
+hframes = 8
+
+[node name="Midground" type="Node" parent="." unique_id=1962280685]
+
+[node name="Wall" parent="Midground" unique_id=828491979 instance=ExtResource("3_27mcu")]
+position = Vector2(-230, 208.00002)
+scale = Vector2(5.7857203, 5.1468544)
+
+[node name="ColourChanger" parent="Midground" unique_id=648904756 instance=ExtResource("4_p5j1k")]
+position = Vector2(-163, -87)
+colour = Color(1, 0, 0, 1)
+
+[node name="SewerMidground" type="Sprite2D" parent="Midground" unique_id=1222009263]
+position = Vector2(576, 323.99997)
+scale = Vector2(1.3714285, 1.1781816)
+texture = ExtResource("8_p011d")
+
+[node name="Foreground" type="Node" parent="." unique_id=1828279886]
+
+[node name="Exit" type="Area2D" parent="Foreground" unique_id=1794265350]
+position = Vector2(33, 750)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Exit" unique_id=1789815733]
+position = Vector2(364.73, 59)
+shape = SubResource("RectangleShape2D_65sm4")
+
+[node name="Player" parent="Foreground" unique_id=2083418740 instance=ExtResource("5_w6fi8")]
+position = Vector2(-102, 194)
+
+[node name="Obstacle" parent="Foreground" unique_id=1817276322 instance=ExtResource("6_8icqo")]
+position = Vector2(1441, 685)
+
+[node name="Obstacle2" parent="Foreground" unique_id=921351730 instance=ExtResource("6_8icqo")]
+position = Vector2(1411, 81)
+
+[node name="Kitten" parent="Foreground" unique_id=243337083 instance=ExtResource("7_pggof")]
+z_index = 1
+position = Vector2(803, 326)
+curve = SubResource("Curve2D_c5kom")
+speed = 1500.0
+
+[node name="Enemy" parent="Foreground" unique_id=855378465 instance=ExtResource("8_huto2")]
+position = Vector2(-758, 310)
+
+[node name="TunnelLadder" type="Sprite2D" parent="Foreground" unique_id=623709847]
+position = Vector2(576.00006, 324.00003)
+scale = Vector2(1.3714286, 1.178182)
+texture = ExtResource("13_as4kl")
+
+[node name="UpperLadder" type="Sprite2D" parent="Foreground" unique_id=1892382844]
+position = Vector2(576, 324)
+scale = Vector2(1.3714285, 1.1781818)
+texture = ExtResource("14_gd04y")
+
+[node name="Walkables" type="Sprite2D" parent="Foreground" unique_id=1688916502]
+z_index = 2
+position = Vector2(576, 324)
+scale = Vector2(1.3714286, 1.1781818)
+texture = ExtResource("15_t32kp")
+
+[node name="Entrance" type="Marker2D" parent="." unique_id=2121061980]
+position = Vector2(22, 71)

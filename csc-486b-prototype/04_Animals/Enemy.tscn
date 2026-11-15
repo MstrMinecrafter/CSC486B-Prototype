@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_ph0r0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 140, 42, 0, 0, 0, 0, 101, 239, 0, 0, 0, 0, 417, 172, 0, 0, 0, 0, 140, 42)
+"points": PackedVector2Array(0, 0, 0, 0, -123, 167, 0, 0, 0, 0, 101, 239, 0, 0, 0, 0, 438, 128, 0, 0, 0, 0, 140, 42)
 }
 point_count = 4
 
@@ -23,8 +23,8 @@ flying = true
 curve = SubResource("Curve2D_ph0r0")
 
 [node name="PatrolFollow" type="PathFollow2D" parent="Patrol" unique_id=1992075127]
-position = Vector2(140, 42)
-rotation = 1.7662388
+position = Vector2(-123, 167)
+rotation = 0.3109983
 
 [node name="Body" type="Area2D" parent="." unique_id=1162475639]
 
@@ -36,7 +36,8 @@ scale = Vector2(6.4, 6.4)
 shape = SubResource("CircleShape2D_65sm4")
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1680971754]
+position = Vector2(-56, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=381943273]
-position = Vector2(376.5, 231)
+position = Vector2(223, 164)
 shape = SubResource("RectangleShape2D_le3yn")
