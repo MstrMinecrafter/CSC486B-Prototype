@@ -317,7 +317,7 @@ position = Vector2(-74, 473.99997)
 scale = Vector2(5.7857203, 5.1468544)
 
 [node name="ColourChanger" parent="Midground" unique_id=648904756 instance=ExtResource("4_p5j1k")]
-position = Vector2(-163, -87)
+position = Vector2(553, -1)
 colour = Color(1, 0, 0, 1)
 
 [node name="SewerMidground" type="Sprite2D" parent="Midground" unique_id=1222009263]
