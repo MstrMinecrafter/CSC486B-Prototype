@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://rrgylns62haf"]
 
 [ext_resource type="Script" uid="uid://j8tr4q2nxhhh" path="res://04_Animals/player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://d4h1pa8wv1lel" path="res://icon.svg" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://r54mssonkjii" path="res://00_Assets/character_sprites/cat_new_spritesheet.png" id="2_820k3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kne1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1672124461]
+position = Vector2(10, 10)
 script = ExtResource("1_kpjcp")
 SPEED = 300.0
 JUMP_VELOCITY = 400.0
@@ -16,9 +17,11 @@ JUMP_VELOCITY = 400.0
 shape = SubResource("RectangleShape2D_kne1u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1810514534]
-position = Vector2(-1.6689299e-06, 1.1920927e-06)
-scale = Vector2(0.15624999, 0.15624999)
-texture = ExtResource("1_xhfnw")
+position = Vector2(0, -5)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("2_820k3")
+hframes = 7
+vframes = 4
 
 [node name="WallBlendArea" type="Area2D" parent="." unique_id=271542887]
 

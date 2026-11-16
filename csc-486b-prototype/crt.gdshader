@@ -7,7 +7,7 @@ void vertex() {
 
 void fragment() {
 	vec3 col = vec3(0);
-	float crth = min(sin(SCREEN_UV.y * 256.0 + TIME * 2.0 + sin(TIME*78.)*.15) + 1.0, 1.1);
+	float crth = min(sin(SCREEN_UV.y * 720.0 + TIME * 2.0 + sin(TIME*78.)*.15) + 1.0, 1.1);
 	vec4 screen_color = texture(screen_texture, SCREEN_UV);
 	col += screen_color.rgb * crth;
     
