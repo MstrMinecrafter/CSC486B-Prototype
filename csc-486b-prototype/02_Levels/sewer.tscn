@@ -348,7 +348,6 @@ position = Vector2(1394, 196)
 scale = Vector2(-0.6799952, 1)
 
 [node name="Kitten" parent="Foreground" unique_id=243337083 instance=ExtResource("7_pggof")]
-z_index = 1
 position = Vector2(803, 326)
 curve = SubResource("Curve2D_c5kom")
 speed = 1500.0
@@ -357,6 +356,7 @@ speed = 1500.0
 position = Vector2(-674, 294)
 
 [node name="TunnelLadder" type="Sprite2D" parent="Foreground" unique_id=623709847]
+z_index = -1
 position = Vector2(576.00006, 324.00003)
 scale = Vector2(1.3714286, 1.178182)
 texture = ExtResource("13_as4kl")
@@ -367,7 +367,6 @@ scale = Vector2(1.3714285, 1.1781818)
 texture = ExtResource("14_gd04y")
 
 [node name="Walkables" type="Sprite2D" parent="Foreground" unique_id=1688916502]
-z_index = -1
 position = Vector2(576, 324)
 scale = Vector2(1.3714286, 1.1781818)
 texture = ExtResource("15_t32kp")
@@ -410,7 +409,6 @@ libraries/ = SubResource("AnimationLibrary_y8die")
 position = Vector2(0, 236)
 
 [node name="screencover" type="ColorRect" parent="." unique_id=1665938535]
-visible = false
 z_index = 7
 material = SubResource("ShaderMaterial_1vivr")
 offset_right = 40.08804
