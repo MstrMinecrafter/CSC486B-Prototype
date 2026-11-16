@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://b6lownckhmt86"]
 
-[ext_resource type="Script" uid="uid://bc7uvf36u4nac" path="res://02_Levels/level.gd" id="1_pyidc"]
+[ext_resource type="Script" uid="uid://c1mtuyic5xntc" path="res://root.gd" id="1_pq8q7"]
+[ext_resource type="PackedScene" uid="uid://c4oqq3hlqoa12" path="res://02_Levels/sewer.tscn" id="2_28aoi"]
 [ext_resource type="PackedScene" uid="uid://cfa62kkiox2gm" path="res://02_Levels/Apartment.tscn" id="2_vvh5c"]
 
 [node name="Root" type="Node2D" unique_id=610993620]
-script = ExtResource("1_pyidc")
-
-[node name="Level2" parent="." unique_id=1407382396 instance=ExtResource("2_vvh5c")]
+script = ExtResource("1_pq8q7")
+bg_parallax = 2.0
+levels = Array[PackedScene]([ExtResource("2_28aoi"), ExtResource("2_vvh5c")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=43225071]

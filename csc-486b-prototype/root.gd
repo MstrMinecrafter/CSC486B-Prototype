@@ -12,6 +12,7 @@ func _ready() -> void:
 	add_level()
 
 func _physics_process(delta: float) -> void:
+	print("hello")
 	cur_level.update(delta)
 	cam.position = player.position
 

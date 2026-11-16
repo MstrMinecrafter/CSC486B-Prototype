@@ -339,9 +339,6 @@ shape = SubResource("RectangleShape2D_65sm4")
 position = Vector2(21, 245)
 scale = Vector2(2, 2)
 
-[node name="Obstacle" parent="Foreground" unique_id=1817276322 instance=ExtResource("6_8icqo")]
-position = Vector2(1441, 685)
-
 [node name="Obstacle2" parent="Foreground" unique_id=921351730 instance=ExtResource("6_8icqo")]
 top_level = true
 position = Vector2(1394, 196)
@@ -415,3 +412,47 @@ offset_right = 40.08804
 offset_bottom = 39.664883
 scale = Vector2(28.786642, 16.33687)
 metadata/_edit_lock_ = true
+
+[node name="Obstacle" parent="screencover" unique_id=1817276322 instance=ExtResource("6_8icqo")]
+position = Vector2(1.1811035, 18.240946)
+scale = Vector2(0.008000001, 0.19300002)
+
+[node name="Obstacle2" parent="screencover" unique_id=2038007764 instance=ExtResource("6_8icqo")]
+position = Vector2(7.8508635, 16.8943)
+scale = Vector2(0.015, 0.058)
+
+[node name="Obstacle3" parent="screencover" unique_id=517431098 instance=ExtResource("6_8icqo")]
+position = Vector2(18.862915, 24.912975)
+scale = Vector2(0.075, 0.07)
+
+[node name="Obstacle4" parent="screencover" unique_id=960215385 instance=ExtResource("6_8icqo")]
+position = Vector2(30.778166, 30.360775)
+scale = Vector2(0.015, 0.058)
+
+[node name="Obstacle5" parent="screencover" unique_id=62390259 instance=ExtResource("6_8icqo")]
+position = Vector2(6.9824057, 40.15457)
+scale = Vector2(0.135, 0.058)
+
+[node name="Obstacle6" parent="screencover" unique_id=244278624 instance=ExtResource("6_8icqo")]
+position = Vector2(40.435425, 14.751908)
+scale = Vector2(0.055, 0.083)
+
+[node name="Obstacle7" parent="screencover" unique_id=1945162619 instance=ExtResource("6_8icqo")]
+position = Vector2(-2.8138046, 8.079883)
+scale = Vector2(0.015, 0.928)
+
+[node name="Obstacle8" parent="screencover" unique_id=1959777956 instance=ExtResource("6_8icqo")]
+position = Vector2(-0.104215145, 2.6932943)
+scale = Vector2(0.04, 0.011)
+
+[node name="Obstacle9" parent="screencover" unique_id=587088211 instance=ExtResource("6_8icqo")]
+position = Vector2(39.532227, 2.8157165)
+scale = Vector2(0.165, 0.011)
+
+[node name="Obstacle10" parent="screencover" unique_id=1906359619 instance=ExtResource("6_8icqo")]
+position = Vector2(42.72815, 9.1816845)
+scale = Vector2(0.015, 0.928)
+
+[node name="Obstacle11" parent="screencover" unique_id=2129593132 instance=ExtResource("6_8icqo")]
+position = Vector2(20.63457, -8.508363)
+scale = Vector2(0.12, 0.053)
