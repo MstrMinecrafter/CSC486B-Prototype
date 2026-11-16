@@ -1,17 +1,12 @@
 [gd_scene format=3 uid="uid://crdkquu7ql5gk"]
 
 [ext_resource type="Script" uid="uid://bnr5klr8twmmm" path="res://03_Environment/colour_changer.gd" id="1_duat1"]
-[ext_resource type="Texture2D" uid="uid://d4h1pa8wv1lel" path="res://icon.svg" id="1_pm0gf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65sm4"]
 size = Vector2(129, 129)
 
 [node name="ColourChanger" type="Node2D" unique_id=648904756]
 script = ExtResource("1_duat1")
-colour = "black"
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=399779297]
-texture = ExtResource("1_pm0gf")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1687648718]
 

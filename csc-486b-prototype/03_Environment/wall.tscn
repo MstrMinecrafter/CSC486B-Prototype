@@ -12,18 +12,3 @@ script = ExtResource("1_xxgf6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=581240117]
 shape = SubResource("RectangleShape2D_xxgf6")
-
-[node name="ColorRect" type="ColorRect" parent="Area2D/CollisionShape2D" unique_id=535885564]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 5.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
