@@ -31,7 +31,7 @@ func detect_overlaps():
 	var overlapping_areas = wall_blend_area.get_overlapping_areas()
 	for overlapping_area in overlapping_areas:
 		var overlap_parent = overlapping_area.get_parent()
-		if overlap_parent is Ladder:
+		if overlap_parent is Ladder and not is_on_floor():
 			on_ladder = true
 		if overlap_parent is Wall and overlap_parent.colcheck == check:
 			blending_in = true
