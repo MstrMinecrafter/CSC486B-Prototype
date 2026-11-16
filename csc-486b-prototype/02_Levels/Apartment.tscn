@@ -1,13 +1,21 @@
 [gd_scene format=3 uid="uid://cfa62kkiox2gm"]
 
 [ext_resource type="Script" uid="uid://bc7uvf36u4nac" path="res://02_Levels/level.gd" id="1_1217n"]
-[ext_resource type="Texture2D" uid="uid://d4h1pa8wv1lel" path="res://icon.svg" id="2_nrpv4"]
+[ext_resource type="Texture2D" uid="uid://d25yuqss52kvp" path="res://00_Assets/shrimp crawfish lobster whatever.jpg" id="2_jieqn"]
 [ext_resource type="PackedScene" uid="uid://iw0usquwya8u" path="res://03_Environment/wall.tscn" id="3_iekis"]
 [ext_resource type="PackedScene" uid="uid://rrgylns62haf" path="res://04_Animals/Player.tscn" id="4_x0ipk"]
 [ext_resource type="PackedScene" uid="uid://d18ljrvjjr1gc" path="res://03_Environment/obstacle.tscn" id="5_jieqn"]
+[ext_resource type="Texture2D" uid="uid://c8r15q2aarfgu" path="res://00_Assets/level_one_sprites/props.png" id="5_x0ipk"]
+[ext_resource type="Texture2D" uid="uid://bu4fip7l8a21b" path="res://00_Assets/level_one_sprites/tv.png" id="6_jieqn"]
+[ext_resource type="Texture2D" uid="uid://dvhi0ri8s6lbs" path="res://00_Assets/level_one_sprites/water_bowl.png" id="7_l5ex3"]
+[ext_resource type="Texture2D" uid="uid://cw686bs05w5yh" path="res://00_Assets/level_one_sprites/window.png" id="8_bxlv5"]
+[ext_resource type="Shader" uid="uid://b3iqdd5v45gky" path="res://crt.gdshader" id="10_l5ex3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65sm4"]
 size = Vector2(29, 30)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1vivr"]
+shader = ExtResource("10_l5ex3")
 
 [node name="Level" type="Node2D" unique_id=1407382396]
 script = ExtResource("1_1217n")
@@ -15,9 +23,10 @@ script = ExtResource("1_1217n")
 [node name="Background" type="Node" parent="." unique_id=228629515]
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=2024734139]
-position = Vector2(1128.9998, 297)
-scale = Vector2(13.210937, 7.7656245)
-texture = ExtResource("2_nrpv4")
+z_index = -1
+position = Vector2(33416, -726)
+scale = Vector2(1152.3027, 647.44135)
+texture = ExtResource("2_jieqn")
 
 [node name="Midground" type="Node" parent="." unique_id=1962280685]
 
@@ -28,23 +37,65 @@ scale = Vector2(5.7857203, 5.1468544)
 [node name="Foreground" type="Node" parent="." unique_id=1828279886]
 
 [node name="Player" parent="Foreground" unique_id=2083418740 instance=ExtResource("4_x0ipk")]
-position = Vector2(135, 60)
+position = Vector2(42, 553)
+scale = Vector2(3, 3)
 
 [node name="Obstacle" parent="Foreground" unique_id=1817276322 instance=ExtResource("5_jieqn")]
-position = Vector2(297, 279)
+position = Vector2(-128, -479)
 
 [node name="Obstacle3" parent="Foreground" unique_id=1957534414 instance=ExtResource("5_jieqn")]
-position = Vector2(487, -74)
+position = Vector2(-299, -279)
 
 [node name="Obstacle2" parent="Foreground" unique_id=921351730 instance=ExtResource("5_jieqn")]
 position = Vector2(-275, 179)
 
 [node name="Exit" type="Area2D" parent="Foreground" unique_id=1794265350]
-position = Vector2(-179, 144)
+position = Vector2(-338, 62)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Exit" unique_id=1789815733]
-position = Vector2(4.5, 5)
 shape = SubResource("RectangleShape2D_65sm4")
 
+[node name="Props" type="Sprite2D" parent="Foreground" unique_id=462270902]
+position = Vector2(959.00006, 710)
+scale = Vector2(2.1394114, 2.634549)
+texture = ExtResource("5_x0ipk")
+
+[node name="Tv" type="Sprite2D" parent="Foreground" unique_id=503983969]
+position = Vector2(-558, 613)
+texture = ExtResource("6_jieqn")
+
+[node name="WaterBowl" type="Sprite2D" parent="Foreground" unique_id=1663351623]
+position = Vector2(-820, 549)
+texture = ExtResource("7_l5ex3")
+
+[node name="Window" type="Sprite2D" parent="Foreground" unique_id=1245839147]
+z_index = -1
+position = Vector2(249.99998, 364.99997)
+scale = Vector2(1.44, 1.44)
+texture = ExtResource("8_bxlv5")
+
+[node name="Window" type="Sprite2D" parent="Foreground/Window" unique_id=318995287]
+position = Vector2(150, 2)
+texture = ExtResource("8_bxlv5")
+
+[node name="Window2" type="Sprite2D" parent="Foreground/Window" unique_id=457726225]
+position = Vector2(293, 4)
+texture = ExtResource("8_bxlv5")
+
+[node name="Window3" type="Sprite2D" parent="Foreground/Window" unique_id=1103744521]
+position = Vector2(441.6667, 5.55557)
+texture = ExtResource("8_bxlv5")
+
+[node name="Props2" type="Sprite2D" parent="Foreground" unique_id=1978908393]
+position = Vector2(-80, 687)
+texture = ExtResource("5_x0ipk")
+
 [node name="Entrance" type="Marker2D" parent="." unique_id=2121061980]
-position = Vector2(348, 170)
+position = Vector2(4, 587)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=840337537]
+z_index = 7
+material = SubResource("ShaderMaterial_1vivr")
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
