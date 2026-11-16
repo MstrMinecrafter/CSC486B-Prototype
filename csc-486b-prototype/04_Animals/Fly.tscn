@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfwveiqckl1pj"]
 
 [ext_resource type="Script" uid="uid://denccape5ywg2" path="res://04_Animals/enemy.gd" id="1_dd4sd"]
-[ext_resource type="Texture2D" uid="uid://y6lwy475stlk" path="res://00_Assets/level_three_sprites/enemies/rat spritesheet.png" id="2_36cnu"]
+[ext_resource type="Texture2D" uid="uid://b8o0ijsfcmdwc" path="res://00_Assets/level_three_sprites/enemies/fly_spritesheet.png" id="2_dd4sd"]
 
 [sub_resource type="Curve2D" id="Curve2D_ph0r0"]
 _data = {
@@ -30,10 +30,11 @@ rotation = 2.539939
 [node name="Body" type="Area2D" parent="." unique_id=1162475639]
 
 [node name="Sprite2D" type="Sprite2D" parent="Body" unique_id=1779768081]
-texture = ExtResource("2_36cnu")
+texture = ExtResource("2_dd4sd")
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body" unique_id=1143427331]
-scale = Vector2(6.4, 6.4)
+scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_65sm4")
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1680971754]

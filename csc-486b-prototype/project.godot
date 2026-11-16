@@ -19,6 +19,11 @@ run/main_scene="uid://b6lownckhmt86"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+
 [input]
 
 ui_left={

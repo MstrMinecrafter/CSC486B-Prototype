@@ -10,3 +10,4 @@ bg_parallax = 2.0
 levels = Array[PackedScene]([ExtResource("2_28aoi"), ExtResource("2_vvh5c")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=43225071]
+zoom = Vector2(1.5, 1.5)

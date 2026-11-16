@@ -2,13 +2,18 @@
 
 [ext_resource type="Script" uid="uid://j8tr4q2nxhhh" path="res://04_Animals/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://r54mssonkjii" path="res://00_Assets/character_sprites/cat_new_spritesheet.png" id="2_820k3"]
+[ext_resource type="Shader" uid="uid://coii5ndscpyys" path="res://01_Source/catshader.gdshader" id="2_hpibx"]
+[ext_resource type="Script" uid="uid://6v4fc7rj1j6f" path="res://04_Animals/sprite_2d.gd" id="4_o24aj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kne1u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7fffk"]
+shader = ExtResource("2_hpibx")
+shader_parameter/add_colour = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1672124461]
-position = Vector2(10, 10)
 script = ExtResource("1_kpjcp")
 SPEED = 300.0
 JUMP_VELOCITY = 400.0
@@ -17,11 +22,13 @@ JUMP_VELOCITY = 400.0
 shape = SubResource("RectangleShape2D_kne1u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1810514534]
+material = SubResource("ShaderMaterial_7fffk")
 position = Vector2(0, -5)
 scale = Vector2(-0.5, 0.5)
 texture = ExtResource("2_820k3")
 hframes = 7
 vframes = 4
+script = ExtResource("4_o24aj")
 
 [node name="WallBlendArea" type="Area2D" parent="." unique_id=271542887]
 

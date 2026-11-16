@@ -7,13 +7,21 @@ class_name Enemy
 @onready var patrol_follow: PathFollow2D = $Patrol/PatrolFollow
 @onready var detection_area: Area2D = $DetectionArea
 @onready var body: Area2D = $Body
+
+@export var enemyType: String
+
 var target: Player = null
 var on_path: bool = true
+var PLAYERISGREEN = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 func detect_player():
+	var player = get_tree().get_first_node_in_group("player") as Player
+	if player and player.check == "green":
+		PLAYERISGREEN = true
+		
 	var overlapping_areas = detection_area.get_overlapping_areas()
 	for overlapping_area in overlapping_areas:
 		var overlap_parent = overlapping_area.get_parent()
@@ -25,19 +33,25 @@ func detect_player():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	detect_player()
-	if target == null and on_path:
-		patrol_follow.progress_ratio = patrol_follow.progress_ratio + speed * delta / patrol.curve.get_baked_length()
-		body.position = patrol_follow.position
-	elif target != null:
-		var step = (target.global_position - body.global_position).normalized() * speed * delta
-		if flying:
-			body.position += step
-		else:
-			body.position.x += step.x
+	if PLAYERISGREEN and enemyType == "fly":
+		body.position.x += -1
+		body.position.y += -1
+		
 	else:
-		var diff = patrol_follow.global_position - body.global_position
-		body.position += diff.normalized() * speed * delta
-		if diff.length() < 0.1:
-			on_path = true
+		detect_player()
+		if target == null and on_path:
+			patrol_follow.progress_ratio = patrol_follow.progress_ratio + speed * delta / patrol.curve.get_baked_length()
+			body.position = patrol_follow.position
+		elif target != null:
+			var step = (target.global_position - body.global_position).normalized() * speed * delta
+				
+			if flying:
+				body.position += step
+			else:
+				body.position.x += step.x
+		else:
+			var diff = patrol_follow.global_position - body.global_position
+			body.position += diff.normalized() * speed * delta
+			if diff.length() < 0.1:
+				on_path = true
 		

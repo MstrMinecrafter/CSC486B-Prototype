@@ -17,12 +17,15 @@
 [ext_resource type="Texture2D" uid="uid://b7c5e1mopsoyc" path="res://00_Assets/level_three_sprites/backgrounds/upper ladder.png" id="14_gd04y"]
 [ext_resource type="Texture2D" uid="uid://c8otwkn1veqqj" path="res://00_Assets/level_three_sprites/backgrounds/walkables.png" id="15_t32kp"]
 [ext_resource type="Texture2D" uid="uid://doub6o46q0mpw" path="res://00_Assets/level_three_sprites/enemies/croc spritesheet.png" id="16_mcs3h"]
-[ext_resource type="Script" uid="uid://b01gepcou1e7i" path="res://01_Source/croc_3.gd" id="18_p011d"]
-[ext_resource type="Script" uid="uid://baoeknpdmpcpv" path="res://01_Source/croc_2.gd" id="19_as4kl"]
-[ext_resource type="Script" uid="uid://cjavimnoplsh6" path="res://01_Source/croc_1.gd" id="20_gd04y"]
-[ext_resource type="Shader" uid="uid://b3iqdd5v45gky" path="res://crt.gdshader" id="21_t32kp"]
+[ext_resource type="Script" uid="uid://b01gepcou1e7i" path="res://03_Environment/croc_3.gd" id="18_p011d"]
+[ext_resource type="Texture2D" uid="uid://bittrx3vsljf0" path="res://00_Assets/empty.png" id="19_0ttu8"]
+[ext_resource type="Script" uid="uid://baoeknpdmpcpv" path="res://03_Environment/croc_2.gd" id="19_as4kl"]
+[ext_resource type="Script" uid="uid://cjavimnoplsh6" path="res://03_Environment/croc_1.gd" id="20_gd04y"]
+[ext_resource type="Shader" uid="uid://b3iqdd5v45gky" path="res://01_Source/crt.gdshader" id="21_t32kp"]
 [ext_resource type="PackedScene" uid="uid://bft7duup5ydrx" path="res://04_Animals/Rat.tscn" id="21_vdj1k"]
 [ext_resource type="PackedScene" uid="uid://cfwveiqckl1pj" path="res://04_Animals/Fly.tscn" id="22_uyuyv"]
+[ext_resource type="PackedScene" uid="uid://dv23gnu6gpobw" path="res://03_Environment/killbox.tscn" id="24_qjwx8"]
+[ext_resource type="PackedScene" uid="uid://b2pxjqr41ni8" path="res://03_Environment/ladder.tscn" id="25_qjwx8"]
 
 [sub_resource type="Animation" id="Animation_mcs3h"]
 length = 0.001
@@ -98,9 +101,9 @@ size = Vector2(44.5, 44)
 
 [sub_resource type="Curve2D" id="Curve2D_c5kom"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1661.585, -156.98108, 0, 0, 0, 0, -1656.7546, -154.56604, 0, 0, 0, 0, -1668.8302, 739.01886, 0, 0, 0, 0, 1103.6982, 697.96234)
+"points": PackedVector2Array(0, 0, 0, 0, -1705.0566, -171.47168, 0, 0, 0, 0, -1622.9435, -161.81128, 0, 0, 0, 0, -1664, -178.71698, 0, 0, 0, 0, -1685.7358, -82.11316, 0, 0, 0, 0, -1635.0189, -60.37732, 0, 0, 0, 0, -1625.3585, 21.7359, 0, 0, 0, 0, -1692.9812, 36.22644, 0, 0, 0, 0, -1625.3585, 128, 0, 0, 0, 0, -1683.3208, 210.11322, 0, 0, 0, 0, -1630.1887, 292.2265, 0, 0, 0, 0, -1678.4906, 364.67926, 0, 0, 0, 0, -1632.6038, 458.86798, 0, 0, 0, 0, -1673.6604, 521.66046, 0, 0, 0, 0, -1644.6793, 596.5284, 0, 0, 0, 0, -1668.8302, 739.01886, 0, 0, 0, 0, 1103.6982, 697.96234)
 }
-point_count = 4
+point_count = 16
 
 [sub_resource type="Animation" id="Animation_as4kl"]
 length = 0.001
@@ -119,7 +122,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_gd04y"]
 resource_name = "idle"
-length = 3.0000000000000004
+length = 0.6
 loop_mode = 1
 step = 0.3
 tracks/0/type = "value"
@@ -129,10 +132,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.90000004, 1.2, 1.5, 1.8000001, 2.1000001, 2.4, 2.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 2, 2, 2, 3, 0, 0, 0]
+"values": [2]
 }
 
 [sub_resource type="Animation" id="Animation_t32kp"]
@@ -219,7 +222,7 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_0ttu8"]
-length = 0.001
+step = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -227,10 +230,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 1]
 }
 
 [sub_resource type="Animation" id="Animation_a4o3d"]
@@ -262,10 +265,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 3, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y8die"]
@@ -284,6 +287,12 @@ script = ExtResource("1_brtc0")
 [node name="Background" type="Node" parent="." unique_id=228629515]
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=2024734139]
+z_index = -2
+position = Vector2(576, 324.00003)
+scale = Vector2(1.3714286, 1.1781819)
+texture = ExtResource("2_brtc0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background" unique_id=487443505]
 z_index = -2
 position = Vector2(576, 324.00003)
 scale = Vector2(1.3714286, 1.1781819)
@@ -314,20 +323,33 @@ libraries/ = SubResource("AnimationLibrary_p011d")
 
 [node name="Midground" type="Node" parent="." unique_id=1962280685]
 
+[node name="Ladder" parent="Midground" unique_id=2082998493 instance=ExtResource("25_qjwx8")]
+position = Vector2(239.99998, 140.00002)
+rotation = -3.1415927
+scale = Vector2(3.2430215, -15.597921)
+
+[node name="Ladder2" parent="Midground" unique_id=1793713211 instance=ExtResource("25_qjwx8")]
+position = Vector2(113.00001, 431)
+rotation = -3.1415927
+scale = Vector2(3.2430215, -16.15792)
+
 [node name="Wall" parent="Midground" unique_id=828491979 instance=ExtResource("3_27mcu")]
 position = Vector2(434, 150)
 scale = Vector2(9.181, 7.827)
 colour = Color(0.773, 0.49, 0.702, 1)
+colcheck = "pink"
 
 [node name="ColourChanger2" parent="Midground" unique_id=648904756 instance=ExtResource("4_p5j1k")]
 position = Vector2(1051, 161)
 scale = Vector2(1, 1.29)
 colour = Color(0.4862745, 0.62352943, 0.13725491, 1)
+colcheck = "green"
 
 [node name="ColourChanger" parent="Midground" unique_id=1221692883 instance=ExtResource("4_p5j1k")]
 position = Vector2(553, -1)
 scale = Vector2(1.57, 1)
 colour = Color(0.77254903, 0.49019608, 0.7019608, 1)
+colcheck = "pink"
 
 [node name="SewerMidground" type="Sprite2D" parent="Midground" unique_id=1222009263]
 z_index = -1
@@ -339,67 +361,27 @@ texture = ExtResource("8_p011d")
 position = Vector2(591.00006, 220)
 scale = Vector2(11.146, 7.827)
 colour = Color(0.773, 0.49, 0.702, 1)
+colcheck = "pink"
 
 [node name="Wall3" parent="Midground" unique_id=312971922 instance=ExtResource("3_27mcu")]
 position = Vector2(772.00006, 177)
 scale = Vector2(11.251, 7.827)
 colour = Color(0.773, 0.49, 0.702, 1)
+colcheck = "pink"
 
 [node name="Wall4" parent="Midground" unique_id=1999248039 instance=ExtResource("3_27mcu")]
 position = Vector2(213, 611.99994)
 scale = Vector2(12.096, 7.827)
 colour = Color(0.486, 0.624, 0.137, 1)
+colcheck = "green"
 
 [node name="Wall5" parent="Midground" unique_id=653018579 instance=ExtResource("3_27mcu")]
 position = Vector2(458, 618)
 scale = Vector2(12.096, 7.827)
 colour = Color(0.486, 0.624, 0.137, 1)
+colcheck = "green"
 
 [node name="Foreground" type="Node" parent="." unique_id=1828279886]
-
-[node name="Obstacle" parent="Foreground" unique_id=1817276322 instance=ExtResource("6_8icqo")]
-position = Vector2(34.000004, 297.99997)
-scale = Vector2(0.23029317, 3.1530163)
-
-[node name="Obstacle3" parent="Foreground" unique_id=2038007764 instance=ExtResource("6_8icqo")]
-position = Vector2(226, 276)
-scale = Vector2(0.43179962, 0.94753844)
-
-[node name="Obstacle4" parent="Foreground" unique_id=517431098 instance=ExtResource("6_8icqo")]
-position = Vector2(543, 407.00003)
-scale = Vector2(2.1589983, 1.1435809)
-
-[node name="Obstacle5" parent="Foreground" unique_id=960215385 instance=ExtResource("6_8icqo")]
-position = Vector2(886.00006, 496.00003)
-scale = Vector2(0.43179962, 0.94753844)
-
-[node name="Obstacle6" parent="Foreground" unique_id=62390259 instance=ExtResource("6_8icqo")]
-position = Vector2(201.00002, 656)
-scale = Vector2(3.8861969, 0.94753844)
-
-[node name="Obstacle7" parent="Foreground" unique_id=244278624 instance=ExtResource("6_8icqo")]
-position = Vector2(1164.0001, 241.00002)
-scale = Vector2(1.5832653, 1.3559601)
-
-[node name="Obstacle8" parent="Foreground" unique_id=1945162619 instance=ExtResource("6_8icqo")]
-position = Vector2(-80.999985, 132)
-scale = Vector2(0.43179962, 15.160615)
-
-[node name="Obstacle9" parent="Foreground" unique_id=1959777956 instance=ExtResource("6_8icqo")]
-position = Vector2(-3.000004, 44)
-scale = Vector2(1.1514657, 0.17970558)
-
-[node name="Obstacle10" parent="Foreground" unique_id=587088211 instance=ExtResource("6_8icqo")]
-position = Vector2(1138, 45.999996)
-scale = Vector2(4.749796, 0.17970558)
-
-[node name="Obstacle11" parent="Foreground" unique_id=1906359619 instance=ExtResource("6_8icqo")]
-position = Vector2(1230, 149.99998)
-scale = Vector2(0.43179962, 15.160615)
-
-[node name="Obstacle12" parent="Foreground" unique_id=2129593132 instance=ExtResource("6_8icqo")]
-position = Vector2(594, -139)
-scale = Vector2(3.454397, 0.8658541)
 
 [node name="Exit" type="Area2D" parent="Foreground" unique_id=1794265350]
 position = Vector2(778, 619)
@@ -411,6 +393,7 @@ shape = SubResource("RectangleShape2D_65sm4")
 [node name="Player" parent="Foreground" unique_id=2083418740 instance=ExtResource("5_w6fi8")]
 position = Vector2(21, 245)
 scale = Vector2(2, 2)
+CLIMB_SPEED = 300.0
 
 [node name="Obstacle2" parent="Foreground" unique_id=921351730 instance=ExtResource("6_8icqo")]
 top_level = true
@@ -420,7 +403,7 @@ scale = Vector2(-0.6799952, 1)
 [node name="Kitten" parent="Foreground" unique_id=243337083 instance=ExtResource("7_pggof")]
 position = Vector2(803, 326)
 curve = SubResource("Curve2D_c5kom")
-speed = 1500.0
+speed = 750.0
 
 [node name="Enemy" parent="Foreground" unique_id=855378465 instance=ExtResource("8_huto2")]
 position = Vector2(-779, 271)
@@ -442,6 +425,33 @@ scale = Vector2(1.3714286, 1.1781818)
 texture = ExtResource("15_t32kp")
 
 [node name="creatures" type="Node" parent="Foreground" unique_id=281922669]
+
+[node name="rat" parent="Foreground/creatures" unique_id=1742467996 instance=ExtResource("21_vdj1k")]
+position = Vector2(700, 617)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground/creatures/rat" unique_id=77543267]
+position = Vector2(-1297, -298.00003)
+scale = Vector2(1.3834708, 2.8703072)
+texture = ExtResource("19_0ttu8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Foreground/creatures/rat" unique_id=209547744]
+position = Vector2(-119.00003, 869.9999)
+scale = Vector2(4.092808, 2.8703072)
+texture = ExtResource("19_0ttu8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Foreground/creatures/rat" unique_id=1949269868]
+position = Vector2(-35.00003, -1460.0001)
+scale = Vector2(4.092808, 2.8703072)
+texture = ExtResource("19_0ttu8")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Foreground/creatures/rat" unique_id=785096522]
+position = Vector2(2216, -288)
+scale = Vector2(4.092808, 2.8703072)
+texture = ExtResource("19_0ttu8")
+
+[node name="fly" parent="Foreground/creatures" unique_id=607468852 instance=ExtResource("22_uyuyv")]
+position = Vector2(885, 118)
+enemyType = "fly"
 
 [node name="croc3" type="Sprite2D" parent="Foreground/creatures" unique_id=1490144237]
 position = Vector2(755, 236)
@@ -473,13 +483,67 @@ script = ExtResource("20_gd04y")
 [node name="croc1" type="AnimationPlayer" parent="Foreground/creatures/croc1" unique_id=1317215569]
 libraries/ = SubResource("AnimationLibrary_y8die")
 
+[node name="Killbox" parent="Foreground/creatures" unique_id=80454015 instance=ExtResource("24_qjwx8")]
+position = Vector2(588, 349)
+scale = Vector2(32.443607, 6.679719)
+
 [node name="wallslop" type="Node" parent="Foreground" unique_id=1807185667]
 
-[node name="Enemy2" parent="Foreground" unique_id=1742467996 instance=ExtResource("21_vdj1k")]
-position = Vector2(700, 617)
+[node name="Obstacle" parent="Foreground/wallslop" unique_id=1817276322 instance=ExtResource("6_8icqo")]
+position = Vector2(34.000004, 297.99997)
+scale = Vector2(0.23029317, 3.1530163)
 
-[node name="Enemy3" parent="Foreground" unique_id=607468852 instance=ExtResource("22_uyuyv")]
-position = Vector2(885, 118)
+[node name="Obstacle" parent="Foreground/wallslop/Obstacle" unique_id=1948706470 instance=ExtResource("6_8icqo")]
+position = Vector2(1741.2588, -30.764183)
+scale = Vector2(0.66140425, 0.33235204)
+
+[node name="Obstacle2" parent="Foreground/wallslop/Obstacle" unique_id=616049834 instance=ExtResource("6_8icqo")]
+position = Vector2(2422.9985, -9.51469)
+scale = Vector2(1.0087875, 0.33235204)
+
+[node name="Obstacle3" parent="Foreground/wallslop/Obstacle" unique_id=879649244 instance=ExtResource("6_8icqo")]
+position = Vector2(3213.2954, -23.152424)
+scale = Vector2(1.0087875, 0.33235204)
+
+[node name="Obstacle3" parent="Foreground/wallslop" unique_id=2038007764 instance=ExtResource("6_8icqo")]
+position = Vector2(226, 276)
+scale = Vector2(0.43179962, 0.94753844)
+
+[node name="Obstacle4" parent="Foreground/wallslop" unique_id=517431098 instance=ExtResource("6_8icqo")]
+position = Vector2(543, 407.00003)
+scale = Vector2(2.1589983, 1.1435809)
+
+[node name="Obstacle5" parent="Foreground/wallslop" unique_id=960215385 instance=ExtResource("6_8icqo")]
+position = Vector2(886.00006, 496.00003)
+scale = Vector2(0.43179962, 0.94753844)
+
+[node name="Obstacle6" parent="Foreground/wallslop" unique_id=62390259 instance=ExtResource("6_8icqo")]
+position = Vector2(201.00002, 656)
+scale = Vector2(3.8861969, 0.94753844)
+
+[node name="Obstacle7" parent="Foreground/wallslop" unique_id=244278624 instance=ExtResource("6_8icqo")]
+position = Vector2(1164.0001, 241.00002)
+scale = Vector2(1.5832653, 1.3559601)
+
+[node name="Obstacle8" parent="Foreground/wallslop" unique_id=1945162619 instance=ExtResource("6_8icqo")]
+position = Vector2(-80.999985, 132)
+scale = Vector2(0.43179962, 15.160615)
+
+[node name="Obstacle9" parent="Foreground/wallslop" unique_id=1959777956 instance=ExtResource("6_8icqo")]
+position = Vector2(-3.000004, 44)
+scale = Vector2(1.1514657, 0.17970558)
+
+[node name="Obstacle10" parent="Foreground/wallslop" unique_id=587088211 instance=ExtResource("6_8icqo")]
+position = Vector2(1138, 45.999996)
+scale = Vector2(4.749796, 0.17970558)
+
+[node name="Obstacle11" parent="Foreground/wallslop" unique_id=1906359619 instance=ExtResource("6_8icqo")]
+position = Vector2(1230, 149.99998)
+scale = Vector2(0.43179962, 15.160615)
+
+[node name="Obstacle12" parent="Foreground/wallslop" unique_id=2129593132 instance=ExtResource("6_8icqo")]
+position = Vector2(594, -139)
+scale = Vector2(3.454397, 0.8658541)
 
 [node name="Entrance" type="Marker2D" parent="." unique_id=2121061980]
 position = Vector2(0, 236)

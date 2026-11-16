@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bu4fip7l8a21b" path="res://00_Assets/level_one_sprites/tv.png" id="6_jieqn"]
 [ext_resource type="Texture2D" uid="uid://dvhi0ri8s6lbs" path="res://00_Assets/level_one_sprites/water_bowl.png" id="7_l5ex3"]
 [ext_resource type="Texture2D" uid="uid://cw686bs05w5yh" path="res://00_Assets/level_one_sprites/window.png" id="8_bxlv5"]
-[ext_resource type="Shader" uid="uid://b3iqdd5v45gky" path="res://crt.gdshader" id="10_l5ex3"]
+[ext_resource type="Shader" uid="uid://b3iqdd5v45gky" path="res://01_Source/crt.gdshader" id="10_l5ex3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65sm4"]
 size = Vector2(29, 30)
@@ -53,6 +53,7 @@ position = Vector2(-275, 179)
 position = Vector2(-338, 62)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Exit" unique_id=1789815733]
+position = Vector2(382, 491)
 shape = SubResource("RectangleShape2D_65sm4")
 
 [node name="Props" type="Sprite2D" parent="Foreground" unique_id=462270902]

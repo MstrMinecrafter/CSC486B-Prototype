@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://o6i2kmghts7a"]
 
-[ext_resource type="Shader" uid="uid://b3iqdd5v45gky" path="res://crt.gdshader" id="1_8egyd"]
+[ext_resource type="Shader" uid="uid://b3iqdd5v45gky" path="res://01_Source/crt.gdshader" id="1_8egyd"]
 [ext_resource type="Texture2D" uid="uid://d25yuqss52kvp" path="res://00_Assets/shrimp crawfish lobster whatever.jpg" id="2_8apwi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8egyd"]

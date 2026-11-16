@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dv23gnu6gpobw"]
+
+[ext_resource type="Script" uid="uid://cfn1egy5lnn8r" path="res://03_Environment/killbox.gd" id="1_e0j8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0j8n"]
+
+[node name="Killbox" type="Node2D" unique_id=80454015]
+script = ExtResource("1_e0j8n")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=812091181]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=755415261]
+shape = SubResource("RectangleShape2D_e0j8n")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b2pxjqr41ni8"]
+
+[ext_resource type="Script" uid="uid://pgdej13uw83s" path="res://03_Environment/ladder.gd" id="1_mxmp7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+
+[node name="Ladder" type="Node2D" unique_id=2082998493]
+script = ExtResource("1_mxmp7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1179050665]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=730273382]
+shape = SubResource("RectangleShape2D_1vivr")

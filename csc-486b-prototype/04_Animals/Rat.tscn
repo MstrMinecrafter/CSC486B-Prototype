@@ -30,6 +30,7 @@ rotation = -0.0016722393
 
 [node name="Sprite2D" type="Sprite2D" parent="Body" unique_id=1779768081]
 texture = ExtResource("2_mn2p8")
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body" unique_id=1143427331]
 scale = Vector2(6.4, 6.4)
