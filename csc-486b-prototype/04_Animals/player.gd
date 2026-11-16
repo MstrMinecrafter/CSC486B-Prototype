@@ -20,7 +20,7 @@ func detect_overlaps():
 		var overlap_parent = overlapping_area.get_parent()
 		if overlap_parent is Wall and overlap_parent.colour == colour:
 			blending_in = true
-		if overlapping_area.name == "Body" and overlap_parent is Enemy:
+		if overlapping_area.name == "Body" and overlap_parent is Enemy and not blending_in:
 			var root = get_tree().root.get_node("Root") as Root #kind of a hacky way of handling death but whatever
 			root.change_level(root.level_index)
 		if overlap_parent is ColourChanger:

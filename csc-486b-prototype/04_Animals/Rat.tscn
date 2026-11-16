@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bft7duup5ydrx"]
+
+[ext_resource type="Script" uid="uid://denccape5ywg2" path="res://04_Animals/enemy.gd" id="1_g6vqv"]
+[ext_resource type="Texture2D" uid="uid://y6lwy475stlk" path="res://00_Assets/level_three_sprites/enemies/rat spritesheet.png" id="2_mn2p8"]
+
+[sub_resource type="Curve2D" id="Curve2D_ph0r0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -598, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -597, 0)
+}
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_65sm4"]
+radius = 4.8663783
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le3yn"]
+size = Vector2(633, 62)
+
+[node name="Enemy" type="Node2D" unique_id=855378465]
+script = ExtResource("1_g6vqv")
+speed = 100.0
+
+[node name="Patrol" type="Path2D" parent="." unique_id=863664364]
+curve = SubResource("Curve2D_ph0r0")
+
+[node name="PatrolFollow" type="PathFollow2D" parent="Patrol" unique_id=1992075127]
+position = Vector2(-598, 1)
+rotation = -0.0016722393
+
+[node name="Body" type="Area2D" parent="." unique_id=1162475639]
+
+[node name="Sprite2D" type="Sprite2D" parent="Body" unique_id=1779768081]
+texture = ExtResource("2_mn2p8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body" unique_id=1143427331]
+scale = Vector2(6.4, 6.4)
+shape = SubResource("CircleShape2D_65sm4")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1680971754]
+position = Vector2(-56, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=381943273]
+position = Vector2(-226.5, -9)
+shape = SubResource("RectangleShape2D_le3yn")

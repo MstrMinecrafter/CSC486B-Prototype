@@ -21,6 +21,8 @@
 [ext_resource type="Script" uid="uid://baoeknpdmpcpv" path="res://01_Source/croc_2.gd" id="19_as4kl"]
 [ext_resource type="Script" uid="uid://cjavimnoplsh6" path="res://01_Source/croc_1.gd" id="20_gd04y"]
 [ext_resource type="Shader" uid="uid://b3iqdd5v45gky" path="res://crt.gdshader" id="21_t32kp"]
+[ext_resource type="PackedScene" uid="uid://bft7duup5ydrx" path="res://04_Animals/Rat.tscn" id="21_vdj1k"]
+[ext_resource type="PackedScene" uid="uid://cfwveiqckl1pj" path="res://04_Animals/Fly.tscn" id="22_uyuyv"]
 
 [sub_resource type="Animation" id="Animation_mcs3h"]
 length = 0.001
@@ -313,8 +315,9 @@ libraries/ = SubResource("AnimationLibrary_p011d")
 [node name="Midground" type="Node" parent="." unique_id=1962280685]
 
 [node name="Wall" parent="Midground" unique_id=828491979 instance=ExtResource("3_27mcu")]
-position = Vector2(-74, 473.99997)
-scale = Vector2(5.7857203, 5.1468544)
+position = Vector2(434, 150)
+scale = Vector2(9.181, 7.827)
+colour = Color(0.773, 0.49, 0.702, 1)
 
 [node name="ColourChanger2" parent="Midground" unique_id=648904756 instance=ExtResource("4_p5j1k")]
 position = Vector2(1051, 161)
@@ -331,6 +334,26 @@ z_index = -1
 position = Vector2(576, 323.99997)
 scale = Vector2(1.3714285, 1.1781816)
 texture = ExtResource("8_p011d")
+
+[node name="Wall2" parent="Midground" unique_id=1127716495 instance=ExtResource("3_27mcu")]
+position = Vector2(591.00006, 220)
+scale = Vector2(11.146, 7.827)
+colour = Color(0.773, 0.49, 0.702, 1)
+
+[node name="Wall3" parent="Midground" unique_id=312971922 instance=ExtResource("3_27mcu")]
+position = Vector2(772.00006, 177)
+scale = Vector2(11.251, 7.827)
+colour = Color(0.773, 0.49, 0.702, 1)
+
+[node name="Wall4" parent="Midground" unique_id=1999248039 instance=ExtResource("3_27mcu")]
+position = Vector2(213, 611.99994)
+scale = Vector2(12.096, 7.827)
+colour = Color(0.486, 0.624, 0.137, 1)
+
+[node name="Wall5" parent="Midground" unique_id=653018579 instance=ExtResource("3_27mcu")]
+position = Vector2(458, 618)
+scale = Vector2(12.096, 7.827)
+colour = Color(0.486, 0.624, 0.137, 1)
 
 [node name="Foreground" type="Node" parent="." unique_id=1828279886]
 
@@ -400,7 +423,7 @@ curve = SubResource("Curve2D_c5kom")
 speed = 1500.0
 
 [node name="Enemy" parent="Foreground" unique_id=855378465 instance=ExtResource("8_huto2")]
-position = Vector2(-674, 294)
+position = Vector2(-779, 271)
 
 [node name="TunnelLadder" type="Sprite2D" parent="Foreground" unique_id=623709847]
 z_index = -1
@@ -451,6 +474,12 @@ script = ExtResource("20_gd04y")
 libraries/ = SubResource("AnimationLibrary_y8die")
 
 [node name="wallslop" type="Node" parent="Foreground" unique_id=1807185667]
+
+[node name="Enemy2" parent="Foreground" unique_id=1742467996 instance=ExtResource("21_vdj1k")]
+position = Vector2(700, 617)
+
+[node name="Enemy3" parent="Foreground" unique_id=607468852 instance=ExtResource("22_uyuyv")]
+position = Vector2(885, 118)
 
 [node name="Entrance" type="Marker2D" parent="." unique_id=2121061980]
 position = Vector2(0, 236)
